@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#14273D">
+    
+    <!-- Top bar layout -->
+    <LinearLayout android:id="@+id/navigation__top_layout"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="0dp"
+        android:background="#14273D">
+        
+        <Button android:id="@+id/navigation__menu_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="toggleMenuLayout"
+            android:background="@drawable/btn_menu"/>
+            
+        <TextView android:id="@+id/navigation__name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="НАВИГАЦИЯ"/>
+        
+        <Button android:id="@+id/navigation__imu_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:onClick="onImuMode"
+            android:background="@drawable/btn_boot_white"/>
+    </LinearLayout>
+    
+    <!-- Main layout -->
+    <FrameLayout android:id="@+id/navigation__main_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="75dp">
+        
+        <ImageView android:id="@+id/navigation__map_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        
+        <ImageView android:id="@+id/navigation__ext_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        
+        <TextView android:id="@+id/navigation__info_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="10dp"
+            android:background="#EC7703"
+            android:textSize="16dp"
+            android:textColor="#000000"/>
+        
+        <Button android:id="@+id/navigation__make_route_button"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/make_route_button"
+            android:onClick="onMakeRoute"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            android:text="Make route"
+            android:textColor="#ffffff"/>
+        
+        <Button android:id="@+id/navigation__cancel_route_button"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/cancel_route_button"
+            android:onClick="onCancelRoute"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            android:text="Убрать маршрут"
+            android:textColor="#ffffff"/>
+        
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp">
+            
+            <!-- Previous floor button -->
+            <FrameLayout android:id="@+id/navigation__prev_floor_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#90aaaaaa">
+            
+                <Button android:id="@+id/navigation__prev_floor_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onPrevFloor"
+                    android:background="@drawable/btn_prev_floor"/>
+            </FrameLayout>
+            
+            <!-- Current floor label -->
+            <TextView android:id="@+id/navigation__current_floor_label"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:background="#90dddddd"/>
+                
+            <!-- Next floor button -->
+            <FrameLayout android:id="@+id/navigation__next_floor_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#90aaaaaa">
+            
+                <Button android:id="@+id/navigation__next_floor_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onNextFloor"
+                    android:background="@drawable/btn_next_floor"/>
+            </FrameLayout>
+            
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            
+            <!-- Zoom in button -->
+            <FrameLayout android:id="@+id/navigation__zoom_in_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/zoom_button_circular">
+                <!--android:background="#90aaaaaa">-->
+                
+                <Button android:id="@+id/navigation__zoom_in_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onZoomIn"
+                    android:background="@drawable/btn_zoom_in"/>
+            </FrameLayout>
+        
+            <View
+                android:layout_width="1dp"
+                android:layout_height="10dp"/>
+            
+            <!-- Zoom out button -->
+            <FrameLayout android:id="@+id/navigation__zoom_out_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/zoom_button_circular">
+                
+                <Button android:id="@+id/navigation__zoom_out_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onZoomOut"
+                    android:background="@drawable/btn_zoom_out"/>
+            </FrameLayout>
+            
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            
+            <View
+                android:layout_width="1dp"
+                android:layout_height="80dp"/>
+            
+            <FrameLayout android:id="@+id/navigation__adjust_mode_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/zoom_button_circular">
+                
+                <Button android:id="@+id/navigation__adjust_mode_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="toggleAdjustMode"
+                    android:background="@drawable/btn_adjust_mode_off"/>
+            </FrameLayout>
+        
+        </LinearLayout>
+        
+        <TextView android:id="@+id/navigation__error_message_label"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|left"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:gravity="center"
+            android:onClick="onCloseMessage"
+            android:background="#E8CC5A5A"
+            android:textSize="15dp"
+            android:textColor="#ffffff"/>
+        
+    </FrameLayout> <!-- Main layout -->
+    
+    <!-- Menu layout -->
+    <LinearLayout android:id="@+id/navigation__menu_layout"
+        android:orientation="vertical"
+        android:layout_width="251dp"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="-251dp"
+        android:background="#132133"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="left"
+            android:textSize="28sp"
+            android:text="Navibeacon"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <TextView android:id="@+id/navigation__menu_location_management_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onLocationManagementMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Локации"/>
+        
+        <TextView android:id="@+id/navigation__menu_measuring_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onMeasuringMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Измерения"/>
+        
+        <TextView android:id="@+id/navigation__menu_navigation_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onNavigationMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Навигация"/>
+        
+        <TextView android:id="@+id/navigation__menu_debug_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onDebugMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Отладка"/>
+        
+        <TextView android:id="@+id/navigation__menu_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:onClick="onSettingsMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Настройки"
+            android:visibility="gone" />
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="60dp"/>
+    </LinearLayout> <!-- Menu layout -->
+    
+</RelativeLayout>

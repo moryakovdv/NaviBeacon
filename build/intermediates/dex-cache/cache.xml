@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Development\Android\Navigine1\app\libs\IMU.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="561d3384f49ae276c343a5bd65255c5f90cdddc3">
+        <dex dex="D:\Development\Android\Navigine1\app\build\intermediates\pre-dexed\release\IMU-b391d45a5da9bc71afff129b90d5b837c1a19635.jar" />
+    </item>
+    <item
+        jar="D:\Development\Android\Navigine1\app\libs\Navigine_SDK.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f1ebfc53ef6a76aaba80ea6e97ab98b596ccf78a">
+        <dex dex="D:\Development\Android\Navigine1\app\build\intermediates\pre-dexed\release\Navigine_SDK-461adb95c10f507c61cdce7e4d57b2734dafadc8.jar" />
+    </item>
+
+</items>

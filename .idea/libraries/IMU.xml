@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="IMU">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/IMU.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#14273D">
+    
+    <!-- Top bar layout -->
+    <LinearLayout android:id="@+id/settings__top_layout"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="0dp"
+        android:background="#14273D">
+        
+        <Button android:id="@+id/settings__menu_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="toggleMenuLayout"
+            android:background="@drawable/btn_menu"/>
+            
+        <TextView android:id="@+id/settings__name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="НАСТРОЙКИ"/>
+        
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"/>
+            
+    </LinearLayout>
+    
+    <!-- Main layout -->
+    <LinearLayout android:id="@+id/settings__main_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="0dp"
+        android:clickable="true"
+        android:onClick="onMainLayoutClicked"
+        android:orientation="vertical"
+        android:background="#E6E6E6">
+        
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__background_navigation_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textSize="14sp"
+                android:textColor="#14273D"
+                android:text="Background navigation mode:"/>
+            
+            <CheckBox android:id="@+id/settings__background_navigation_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+        </LinearLayout>
+        
+        <!-- Background navigation mode: normal/economic/super economic -->
+        <RadioGroup android:id="@+id/settings__radio_group"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+            
+            <RadioButton android:id="@+id/settings__radio_normal_mode"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:text="NORM"
+                android:textColor="#14273D"
+                android:onClick="onButtonClicked"/>
+            
+            <RadioButton android:id="@+id/settings__radio_economic_mode"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:text="ECO-1"
+                android:textColor="#14273D"
+                android:onClick="onButtonClicked"/>
+            
+            <RadioButton android:id="@+id/settings__radio_economic2_mode"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:text="ECO-2"
+                android:textColor="#14273D"
+                android:onClick="onButtonClicked"/>
+        </RadioGroup>
+        
+        <!-- Location server label -->
+        <TextView android:id="@+id/settings__location_server_label"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:textSize="14sp"
+            android:textColor="#14273D"
+            android:text="Location server:"/>    
+    
+        <!-- Location server address -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-20dp">
+        
+            <EditText android:id="@+id/settings__location_server_address_edit"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="2"
+                android:scrollHorizontally="true"
+                android:textColor="#14273D"
+                android:singleLine="true"/>
+        
+        </LinearLayout>
+        
+        <!-- Beacon service enabled/disabled -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__beacon_service_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Notifications enabled"/>
+            
+            <CheckBox android:id="@+id/settings__beacon_service_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+        
+        </LinearLayout>
+        
+        <!-- Save navigation log -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__save_navigation_log_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Save navigation log"/>
+            
+            <CheckBox android:id="@+id/settings__save_navigation_log_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+        </LinearLayout>
+        
+        <!-- Save navigation track -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__save_navigation_track_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Save navigation track"/>
+            
+            <CheckBox android:id="@+id/settings__save_navigation_track_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+        </LinearLayout>
+        
+        <!-- Post messages enabled -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__post_messages_enabled_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Send statistics to the server"/>
+            
+            <CheckBox android:id="@+id/settings__post_messages_enabled_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+        </LinearLayout>
+        
+        <!-- Crash messages enabled -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__crash_messages_enabled_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Send crashes to the server"/>
+            
+            <CheckBox android:id="@+id/settings__crash_messages_enabled_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+        </LinearLayout>
+        
+        <!-- Debug mode enabled -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__debug_mode_enabled_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Debug mode enabled"/>
+            
+            <CheckBox android:id="@+id/settings__debug_mode_enabled_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+            
+        </LinearLayout>
+        
+        <!-- Orientation enabled -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__orientation_enabled_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Show device orientation"/>
+            
+            <CheckBox android:id="@+id/settings__orientation_enabled_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+            
+        </LinearLayout>
+        
+        <!-- File mode navigation -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            
+            <TextView android:id="@+id/settings__navigation_file_enabled_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="left"
+                android:textColor="#14273D"
+                android:textSize="14sp"
+                android:text="Navigation file enabled"/>
+            
+            <CheckBox android:id="@+id/settings__navigation_file_enabled_checkbox"
+                android:layout_width="48dp"
+                android:layout_height="29dp"
+                android:layout_margin="5dp"
+                android:onClick="onButtonClicked"
+                android:button="@drawable/toggle_button"/>
+            
+        </LinearLayout>
+        
+        <!-- Vertical stretch -->
+        <View android:layout_width="1dp"
+          android:layout_height="0dp"
+          android:layout_weight="1"/>
+        
+    </LinearLayout> <!-- Main layout -->
+    
+    <!-- Menu layout -->
+    <LinearLayout android:id="@+id/settings__menu_layout"
+        android:orientation="vertical"
+        android:layout_width="251dp"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="-251dp"
+        android:background="#132133"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="left"
+            android:textSize="28sp"
+            android:text="Navigine"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <TextView android:id="@+id/settings__menu_location_management_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onLocationManagementMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Location management"/>
+        
+        <TextView android:id="@+id/settings__menu_measuring_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onMeasuringMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Measuring mode"/>
+        
+        <TextView android:id="@+id/settings__menu_navigation_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onNavigationMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Navigation mode"/>
+        
+        <TextView android:id="@+id/settings__menu_debug_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onDebugMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Debug mode"/>
+        
+        <TextView android:id="@+id/settings__menu_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:onClick="onSettingsMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Settings"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="60dp"/>
+    </LinearLayout> <!-- Menu layout -->
+    
+</RelativeLayout>
+<!-- From: file:/D:/Development/Android/Navigine1/app/src/main/res/layout/settings.xml -->

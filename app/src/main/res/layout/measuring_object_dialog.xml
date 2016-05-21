@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#E6E6E6">
+    
+    <TextView android:id="@+id/measuring_object_dialog__title_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#14273D"/>
+    
+    <!-- Name -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp">
+        
+        <TextView android:id="@+id/measuring_object_dialog__name_label"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#14273D"
+            android:text="Название"/>
+        
+        <EditText android:id="@+id/measuring_object_dialog__name_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:scrollHorizontally="true"
+            android:digits="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz._- "
+            android:maxLength="20"
+            android:textColor="#40A3CD"
+            android:singleLine="true"/>
+    </LinearLayout>
+    
+    <!-- Beacon uuid -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp">
+        
+        <TextView android:id="@+id/measuring_object_dialog__beacon_uuid_label"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#14273D"
+            android:text="UUID"/>
+        
+        <EditText android:id="@+id/measuring_object_dialog__beacon_uuid_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:scrollHorizontally="true"
+            android:digits="1234567890ABCDEFabcdef-"
+            android:maxLength="40"
+            android:textColor="#40A3CD"
+            android:singleLine="true"/>
+    </LinearLayout>
+    
+    <!-- Beacon major -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp">
+        
+        <TextView android:id="@+id/measuring_object_dialog__beacon_major_label"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#14273D"
+            android:text="Major"/>
+        
+        <EditText android:id="@+id/measuring_object_dialog__beacon_major_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:scrollHorizontally="true"
+            android:digits="1234567890"
+            android:maxLength="5"
+            android:singleLine="true"
+            android:textColor="#40A3CD"/>
+    </LinearLayout>
+    
+    <!-- Beacon minor -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp">
+        
+        <TextView android:id="@+id/measuring_object_dialog__beacon_minor_label"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#14273D"
+            android:text="Minor"/>
+        
+        <EditText android:id="@+id/measuring_object_dialog__beacon_minor_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:scrollHorizontally="true"
+            android:digits="1234567890"
+            android:maxLength="5"
+            android:textColor="#40A3CD"
+            android:singleLine="true"/>
+    </LinearLayout>
+    
+    <!-- X -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp">
+        
+        <TextView android:id="@+id/measuring_object_dialog__x_label"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#14273D"
+            android:text="X"/>
+        
+        <EditText android:id="@+id/measuring_object_dialog__x_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:scrollHorizontally="true"
+            android:digits="1234567890."
+            android:maxLength="10"
+            android:textColor="#40A3CD"
+            android:singleLine="true"/>
+    </LinearLayout>
+    
+    <!-- Y -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp">
+        
+        <TextView android:id="@+id/measuring_object_dialog__y_label"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#14273D"
+            android:text="Y"/>
+        
+        <EditText android:id="@+id/measuring_object_dialog__y_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:scrollHorizontally="true"
+            android:digits="1234567890."
+            android:maxLength="10"
+            android:textColor="#40A3CD"
+            android:singleLine="true"/>
+    </LinearLayout>
+    
+    <!-- Buttons -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center">
+        
+        <Button android:id="@+id/measuring_object_dialog__start_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#40A3CD"
+            android:textSize="14sp"
+            android:text="Старт"
+            android:background="#90dddddd"/>
+        
+        <Button android:id="@+id/measuring_object_dialog__delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FF4500"
+            android:textSize="14sp"
+            android:text="Удалить"
+            android:background="#90dddddd"/>
+        
+        <Button android:id="@+id/measuring_object_dialog__cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#FF8C00"
+            android:textSize="14sp"
+            android:text="Отмена"
+            android:background="#90dddddd"/>
+    
+    </LinearLayout>
+    
+</LinearLayout>

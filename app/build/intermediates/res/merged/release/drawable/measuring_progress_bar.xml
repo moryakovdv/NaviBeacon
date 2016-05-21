@@ -1,0 +1,11 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <color android:color="#CCCCCC"></color>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+             <color android:color="#40A3CD"></color>
+        </clip>
+    </item>
+</layer-list>
+<!-- From: file:/D:/Development/Android/Navigine1/app/src/main/res/drawable/measuring_progress_bar.xml -->

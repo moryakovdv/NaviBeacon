@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <TextView android:id="@+id/target_point_dialog_description"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:linksClickable="true"/>
+    
+    <!-- Buttons -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        
+        <Button android:id="@+id/target_point_dialog__connect_imu_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FF8C00"
+            android:textSize="11sp"
+            android:text="CONNECT IMU"/>
+        
+        <Button android:id="@+id/target_point_dialog__disconnect_imu_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FF8C00"
+            android:textSize="11sp"
+            android:text="DISCONNECT IMU"/>
+        
+        <Button android:id="@+id/target_point_dialog__make_route_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FF8C00"
+            android:textSize="11sp"
+            android:text="MAKE ROUTE"/>
+    
+        <Button android:id="@+id/target_point_dialog__cancel_route_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FF8C00"
+            android:textSize="11sp"
+            android:text="CANCEL ROUTE"/>
+    
+    </LinearLayout>
+    
+</LinearLayout>

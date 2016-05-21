@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#14273D">
+    
+    <!-- Top bar layout -->
+
+    <!-- Main layout -->
+    <LinearLayout android:id="@+id/login__main_layout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="75dp"
+        android:clickable="true"
+        android:onClick="onMainLayoutClicked">
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"/>
+        
+        <TextView android:id="@+id/login__status_label"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center|top"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:maxLines="32"
+            android:scrollbars="vertical"
+            android:textColor="#80CC5A5A"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"/>
+        
+        <EditText android:id="@+id/login__login_edit"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|top"
+            android:gravity="center"
+            android:background="@drawable/login_login_edit"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:scrollHorizontally="true"
+            android:maxLength="32"
+            android:textSize="14dp"
+            android:textColor="#ffffff"
+            android:hint="Логин/e-mail"/>
+    
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"/>
+        
+        <EditText android:id="@+id/login__password_edit"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|top"
+            android:gravity="center"
+            android:background="@drawable/login_password_edit"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="true"
+            android:scrollHorizontally="true"
+            android:maxLength="32"
+            android:password="true"
+            android:textSize="14dp"
+            android:textColor="#ffffff"
+            android:hint="Пароль"/>
+    
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"/>
+        
+        <Button android:id="@+id/login__done_button"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|top"
+            android:background="@drawable/login_done_button"
+            android:textSize="14dp"
+            android:textColor="#ffffff"
+            android:text="Вход"/>
+    
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"/>
+        
+        <Button android:id="@+id/login__cancel_button"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|top"
+            android:background="@drawable/login_cancel_button"
+            android:textSize="14dp"
+            android:textColor="#ffffff"
+            android:text="Отмена"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+    </LinearLayout>
+    
+    <!-- Menu layout -->
+    <LinearLayout android:id="@+id/login__menu_layout"
+        android:orientation="vertical"
+        android:layout_width="251dp"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="-251dp"
+        android:background="#132133"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="left"
+            android:textSize="28sp"
+            android:text="Navibeacon"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <TextView android:id="@+id/login__menu_location_management_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onLocationManagementMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Местоположение"/>
+        
+        <TextView android:id="@+id/login__menu_measuring_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onMeasuringMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Измерения"/>
+        
+        <TextView android:id="@+id/login__menu_navigation_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onNavigationMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Навигация"/>
+        
+        <TextView android:id="@+id/login__menu_debug_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onDebugMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Отладка"/>
+        
+        <TextView android:id="@+id/login__menu_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:onClick="onSettingsMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Настройки"
+            android:visibility="gone" />
+
+        <LinearLayout android:id="@+id/login__top_layout"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="0dp"
+            android:background="#14273D">
+
+            <Button android:id="@+id/login__menu_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:onClick="toggleMenuLayout"
+                android:background="@drawable/btn_menu"/>
+
+            <TextView android:id="@+id/login__name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="АВТОРИЗАЦИЯ"/>
+
+            <ProgressBar android:id="@+id/login__progress_bar"
+                android:indeterminate="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="60dp"/>
+        
+    </LinearLayout>
+    
+</RelativeLayout>
+<!-- From: file:/D:/Development/Android/Navigine1/app/src/main/res/layout/login.xml -->

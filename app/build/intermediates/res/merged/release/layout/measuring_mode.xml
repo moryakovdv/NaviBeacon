@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#14273D">
+    
+    <!-- Top bar layout -->
+    <LinearLayout android:id="@+id/measuring_mode__top_layout"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="0dp"
+        android:background="#14273D">
+        
+        <Button android:id="@+id/measuring_mode__menu_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="toggleMenuLayout"
+            android:background="@drawable/btn_menu"/>
+            
+        <TextView android:id="@+id/measuring_mode__name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="ИЗМЕРЕНИЯ"/>
+        
+        <Button android:id="@+id/measuring_mode__upload_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:onClick="onUploadMap"
+            android:background="@drawable/btn_upload_map"/>
+        
+        <ProgressBar android:id="@+id/measuring_mode__upload_progress_bar"
+            android:indeterminate="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+    
+    <!-- Main layout -->
+    <FrameLayout android:id="@+id/measuring_mode__main_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="75dp">
+        
+        <ImageView android:id="@+id/measuring_mode__map_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        
+        <ImageView android:id="@+id/measuring_mode__ext_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        
+        <ImageView android:id="@+id/measuring_mode__center_target_image"
+            android:src="@drawable/target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+        
+        <!-- Next/prev floor panel -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="100dp"
+            android:layout_marginRight="15dp">
+            
+            <!-- Previous floor button -->
+            <FrameLayout android:id="@+id/measuring_mode__prev_floor_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#90aaaaaa">
+            
+                <Button android:id="@+id/measuring_mode__prev_floor_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onPrevFloor"
+                    android:background="@drawable/btn_prev_floor"/>
+            </FrameLayout>
+        
+            <!-- Current floor label -->
+            <TextView android:id="@+id/measuring_mode__current_floor_label"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:background="#90dddddd"/>
+                
+            <!-- Next floor button -->
+            <FrameLayout android:id="@+id/measuring_mode__next_floor_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#90aaaaaa">
+            
+                <Button android:id="@+id/measuring_mode__next_floor_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onNextFloor"
+                    android:background="@drawable/btn_next_floor"/>
+            </FrameLayout>
+            
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            
+            <FrameLayout android:id="@+id/measuring_mode__show_percentage_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#90dddddd">
+                
+                <Button android:id="@+id/measuring_mode__show_percentage_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onTogglePercentage"
+                    android:background="@drawable/btn_show_percentage"/>
+            </FrameLayout>
+            
+            <FrameLayout android:id="@+id/measuring_mode__show_labels_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#90dddddd">
+                
+                <Button android:id="@+id/measuring_mode__show_labels_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="onToggleLabels"
+                    android:background="@drawable/btn_show_labels"/>
+            </FrameLayout>
+        </LinearLayout>
+        
+        <!-- Progress panel -->
+        <FrameLayout android:id="@+id/measuring_mode__progress_panel"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="top|left"
+            android:background="@android:color/transparent">
+            
+            <ProgressBar android:id="@+id/measuring_mode__progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:max="100"
+                android:minHeight="40dp"
+                android:maxHeight="40dp"
+                android:progressDrawable="@drawable/measuring_progress_bar"/>
+            
+            <TextView android:id="@+id/measuring_mode__progress_label"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textColor="#000000"/>
+        </FrameLayout>
+        
+        <!-- Measuring panel -->
+        <FrameLayout android:id="@+id/measuring_mode__measuring_panel"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="50dp"
+            android:background="#E8E6E6E6">
+            
+            <TextView android:id="@+id/measuring_mode__measuring_prompt"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:onClick="onStopMeasuring"
+                android:textSize="16dp"
+                android:textColor="#14273D"/>
+            
+        </FrameLayout>
+        
+        <!-- Bottom panel: add point/beacon buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="#E8E6E6E6">
+            
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+            
+            <Button android:id="@+id/measuring_mode__add_point_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="onAddPoint"
+                android:background="@drawable/btn_add_point"/>
+            
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+            
+            <Button android:id="@+id/measuring_mode__add_beacon_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:onClick="onAddBeacon"
+                android:background="@drawable/btn_add_beacon"/>
+            
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+    </FrameLayout> <!-- Main layout -->
+
+    <!-- Menu layout -->
+    <LinearLayout android:id="@+id/measuring_mode__menu_layout"
+        android:orientation="vertical"
+        android:layout_width="251dp"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="-251dp"
+        android:background="#132133"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="left"
+            android:textSize="28sp"
+            android:text="Navibeacon"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <TextView android:id="@+id/measuring_mode__menu_location_management_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onLocationManagementMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Локации"/>
+        
+        <TextView android:id="@+id/measuring_mode__menu_measuring_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onMeasuringMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Измерения"/>
+        
+        <TextView android:id="@+id/measuring_mode__menu_navigation_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onNavigationMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Навигация"/>
+        
+        <TextView android:id="@+id/measuring_mode__menu_debug_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onDebugMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Отладка"/>
+        
+        <TextView android:id="@+id/measuring_mode__menu_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:onClick="onSettingsMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Настройки"
+            android:visibility="gone" />
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="60dp"/>
+    </LinearLayout> <!-- Menu layout -->
+    
+</RelativeLayout>
+
+<!-- From: file:/D:/Development/Android/Navigine1/app/src/main/res/layout/measuring_mode.xml -->

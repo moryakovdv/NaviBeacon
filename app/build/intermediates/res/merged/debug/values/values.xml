@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/Development/Android/Navigine1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="address_edit">IP Сервера</string>
+    <string name="app_name">Navibeacon</string>
+    <string formatted="false" name="beacon_activity_name">Navigine.Beacon</string>
+    <string formatted="false" name="beacon_s_measuring_d_sec">Метка \'%s\': %d сек (мощность %d%%)</string>
+    <string formatted="false" name="beacon_s_start_measuring">Метка \'%s\': старт</string>
+    <string name="cancel_button">Отмена</string>
+    <string name="centimeters">см</string>
+    <string formatted="false" name="connected_to_s_d">Подключен к %s:%d</string>
+    <string formatted="false" name="connecting_to_s_d">Подключение к %s:%d</string>
+    <string name="content_loader_name">Загрузка</string>
+    <string name="delete_button">Удалить</string>
+    <string formatted="false" name="disconnected_from_s_d">ОТключен от %s:%d</string>
+    <string name="error">Ошибка!</string>
+    <string name="field_beacon_id">Метки</string>
+    <string name="field_name">Название</string>
+    <string name="field_x">X</string>
+    <string name="field_x1">X1</string>
+    <string name="field_x2">X2</string>
+    <string name="field_y">Y</string>
+    <string name="field_y1">Y1</string>
+    <string name="field_y2">Y2</string>
+    <string name="file_picker_name">Выбор файла</string>
+    <string name="freq_edit">Частота, Hz</string>
+    <string name="kilometers">км</string>
+    <string name="load_content_forced">Принудительная загрузка</string>
+    <string name="load_content_location_field">Местоположение:</string>
+    <string name="load_content_title">Загрузить?</string>
+    <string name="load_content_user_field">UID:</string>
+    <string name="load_log_button">Load log</string>
+    <string name="log_mode_navigation">Log mode navigation</string>
+    <string name="log_output">Сохранить в файл</string>
+    <string name="make_route">Созжать маршрут</string>
+    <string name="map_mode_name">Navigine.Map</string>
+    <string name="measuring_mode_name">Navigine.Plan</string>
+    <string name="menu_item_cancel_beacon">Убрать метку</string>
+    <string name="menu_item_cancel_line">Убрать линию</string>
+    <string name="menu_item_cancel_point">Убрать точку</string>
+    <string name="menu_item_cancel_route">ОТменить маршрут</string>
+    <string name="menu_item_clear_trace">Очистить</string>
+    <string name="menu_item_console">Консоль</string>
+    <string name="menu_item_create_beacon">Поставить метку</string>
+    <string name="menu_item_create_line">Создать линию</string>
+    <string name="menu_item_create_point">Создать точку</string>
+    <string name="menu_item_load_content">Загрузить</string>
+    <string name="menu_item_load_map">Загрузить карту</string>
+    <string name="menu_item_measuring">Измерения</string>
+    <string name="menu_item_settings">Настройки</string>
+    <string name="menu_item_tracking_off">Слежение Выкл.</string>
+    <string name="menu_item_tracking_on">Слежение ВКЛ</string>
+    <string name="meters">м</string>
+    <string formatted="false" name="object_s_already_exists">Объект \'%s\' уже существует!</string>
+    <string name="ok_button">Ok</string>
+    <string formatted="false" name="point_s_measuring_d_sec">Точка \'%s\': %d сек (мощность %d%%)</string>
+    <string formatted="false" name="point_s_start_measuring">Точка \'%s\': старт</string>
+    <string name="port_edit">Порт</string>
+    <string name="server_mode_navigation">Навигация на сервере</string>
+    <string name="set_line_end">Поставить окончание</string>
+    <string name="set_magnetometer_measuring_line">Измерения магнитометра</string>
+    <string name="set_measuring_beacon">Метка</string>
+    <string name="set_measuring_line">Линейка</string>
+    <string name="set_measuring_object">Объект</string>
+    <string name="set_measuring_point">Точка</string>
+    <string name="start_button">Старт</string>
+    <string name="stop_button">Стоп</string>
+    <string name="text_mode_name">Navigine.Console</string>
+    <string name="title_activity_main">Navibeacon</string>
+    <string name="unable_to_load_map">Не могу загрузить карту!</string>
+    <string name="upload_content_option">Загрузка на сервер</string>
+</resources>

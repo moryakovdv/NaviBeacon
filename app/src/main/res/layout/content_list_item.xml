@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="75dp"
+    android:orientation="vertical">
+    
+    <FrameLayout android:id="@+id/list_item__update_view"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:background="#D2D2D2">
+        
+        <ProgressBar android:id="@+id/list_item__update_progress_bar"
+            android:indeterminate="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical|center_horizontal"/>
+    
+    </FrameLayout>
+    
+    <HorizontalScrollView android:id="@+id/list_item__horizontal_scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:scrollbars="none"
+        android:clickable="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:orientation="horizontal">
+        
+            <FrameLayout android:id="@+id/list_item__main_frame_layout"
+                android:layout_width="360dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="#E7E7E7">
+        
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left">
+                
+                    <TextView android:id="@+id/list_item__title_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:textStyle="bold"
+                        android:textColor="#14273D"
+                        android:textSize="16sp"/>
+                    
+                    <TextView android:id="@+id/list_item__status_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:textStyle="bold"
+                        android:textColor="#A8A8A8"
+                        android:textSize="13sp"/>
+                        
+                </LinearLayout>
+                
+                <Button android:id="@+id/list_item__download_button"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/btn_download_map"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+                
+                <Button android:id="@+id/list_item__upload_button"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/btn_upload_map"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+            
+                <Button android:id="@+id/list_item__info_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/btn_map_info"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+                
+                <ImageView android:id="@+id/list_item__selected_map_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_gravity="center|right"
+                    android:src="@drawable/elm_selected_map"/>
+                
+                <ProgressBar android:id="@+id/list_item__progress_bar"
+                    android:indeterminate="true"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center|right"
+                    android:max="100"/>
+                <!--<ProgressBar android:id="@+id/list_item__progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:max="100"
+                    android:secondaryProgress="100"
+                    android:progressDrawable="@drawable/circular_progress_bar"/>-->
+                
+                <Button android:id="@+id/list_item__download_stop_button"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/btn_download_stop"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+                
+            </FrameLayout>
+            
+            <Button android:id="@+id/list_item__delete_button"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/btn_delete_map"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+        
+        </LinearLayout>
+  
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#A8A8A8"/>
+
+</LinearLayout>

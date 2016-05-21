@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#14273D">
+    
+    <!-- Top bar layout -->
+    <LinearLayout android:id="@+id/content__top_layout"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="25dp"
+        android:background="#14273D">
+        
+        <Button android:id="@+id/content__menu_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="toggleMenuLayout"
+            android:background="@drawable/btn_menu"/>
+            
+        <TextView android:id="@+id/content__name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"/>
+        
+        <Button android:id="@+id/content__logout_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
+            android:onClick="logout"
+            android:background="@drawable/btn_logout"/>
+            
+    </LinearLayout>
+
+    <RelativeLayout android:id="@+id/content__main_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="75dp"
+        android:clickable="true"
+        android:onClick="onMainLayoutClicked"
+        android:background="#E6E6E6">
+    
+        <com.navigine.navigine.ListView android:id="@+id/content__list_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textColor="#14273D"/>
+        
+        <TextView android:id="@+id/content__status_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#14273D"
+            android:textSize="20sp"/>
+    
+    </RelativeLayout>
+    
+    <!-- Menu layout -->    
+    <LinearLayout android:id="@+id/content__menu_layout"
+        android:orientation="vertical"
+        android:layout_width="251dp"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="-251dp"
+        android:background="#132133"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="left"
+            android:textSize="28sp"
+            android:text="Navibeacon"/>
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <TextView android:id="@+id/content__menu_location_management_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onLocationManagementMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Локации"/>
+        
+        <TextView android:id="@+id/content__menu_measuring_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onMeasuringMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Измерения"/>
+        
+        <TextView android:id="@+id/content__menu_navigation_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onNavigationMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Навигация"/>
+        
+        <TextView android:id="@+id/content__menu_debug_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:onClick="onDebugMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Отладка" />
+        
+        <TextView android:id="@+id/content__menu_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:onClick="onSettingsMode"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:text="Настройки"
+            android:visibility="gone" />
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="60dp"/>
+        
+    </LinearLayout>
+    
+</RelativeLayout>
+<!-- From: file:/D:/Development/Android/Navigine1/app/src/main/res/layout/content.xml -->
